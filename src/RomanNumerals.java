@@ -1,69 +1,62 @@
-
-
 public class RomanNumerals {
-	public static int convertToInteger (String romanNum) {
-	    int decimal = 0;
+	public RomanNumerals(){}
+	public int convertToInteger(String roman) {
 
-	    String romanNumeral = romanNum.toUpperCase();
-	    for(int x = 0;x<romanNumeral.length();x++)
-	    {
-	        char convertToDecimal = romanNum.charAt(x);
+		int decimal = 0;
 
-	        switch (convertToDecimal)
-	        {
-	        case 'M':
-	            decimal += 1000;
-	            break;
+		roman = roman.toUpperCase();
+		
+		for (int i = 0; i < roman.length(); i++) {
+			int convertToDecimal = roman.charAt(i);
 
-	        case 'D':
-	            decimal += 500;
-	            break;
+			switch (convertToDecimal) {
+			case 'M':
+				decimal += 1000;
+				break;
 
-	        case 'C':
-	            decimal += 100;
-	            break;
+			case 'D':
+				decimal += 500;
+				break;
 
-	        case 'L':
-	            decimal += 50;
-	            break;
+			case 'C':
+				decimal += 100;
+				break;
 
-	        case 'X':
-	            decimal += 10;
-	            break;
+			case 'L':
+				decimal += 50;
+				break;
 
-	        case 'V':
-	            decimal += 5;
-	            break;
+			case 'X':
+				decimal += 10;
+				break;
 
-	        case 'I':
-	            decimal += 1;
-	            break;
-	        }
-	    }
-	    if (romanNumeral.contains("IV"))
-	    {
-	        decimal-=2;
-	    }
-	    if (romanNumeral.contains("IX"))
-	    {
-	        decimal-=2;
-	    }
-	    if (romanNumeral.contains("XL"))
-	    {
-	        decimal-=10;
-	    }
-	    if (romanNumeral.contains("XC"))
-	    {
-	        decimal-=10;
-	    }
-	    if (romanNumeral.contains("CD"))
-	    {
-	        decimal-=100;
-	    }
-	    if (romanNumeral.contains("CM"))
-	    {
-	        decimal-=100;
-	    }
-	    return decimal;
+			case 'V':
+				decimal += 5;
+				break;
+
+			case 'I':
+				decimal += 1;
+				break;
+			}
+		}
+		if (roman.contains("IV")) {
+			decimal -= 2;
+		}
+		if (roman.contains("IX")) {
+			decimal -= 2;
+		}
+		if (roman.contains("XL")) {
+			decimal -= 10;
+		}
+		if (roman.contains("XC")) {
+			decimal -= 10;
+		}
+		if (roman.contains("CD")) {
+			decimal -= 100;
+		}
+		if (roman.contains("CM")) {
+			decimal -= 100;
+		}
+		return decimal;
 	}
 }
