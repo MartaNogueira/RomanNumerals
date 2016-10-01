@@ -8,9 +8,9 @@ public class TestRomanNumerals {
 	public void test() {
 
 		RomanNumerals obj = new RomanNumerals();
-		int numb = obj.convertToInteger("vii");
+		int numb = obj.convertToInteger("li");
 
-		assertEquals("", 7, numb);
+		assertEquals("", 51, numb);
 
 	}
 
